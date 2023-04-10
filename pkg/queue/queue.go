@@ -22,6 +22,10 @@ func (q *Queue[T]) Remove() (T, error) {
 	return result, nil
 }
 
+func (q *Queue[T]) Size() int {
+	return len(q.nodes)
+}
+
 func (q *Queue[T]) IsEmpty() bool {
-	return len(q.nodes) == 0
+	return q.Size() == 0
 }
