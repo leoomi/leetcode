@@ -102,4 +102,9 @@ func TestAddRemove(t *testing.T) {
 	queue.Remove()
 	queue.Add(3)
 
+	for i, e := range []int{2, 3} {
+		if queue.nodes[i] != e {
+			t.Errorf("Expected %d but got %d", e, queue.nodes[i])
+		}
+	}
 }
